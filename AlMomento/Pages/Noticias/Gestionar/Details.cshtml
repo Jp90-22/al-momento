@@ -1,0 +1,115 @@
+﻿@page
+@model AlMomento.Pages.Noticias.Gestionar.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Noticia</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Sumario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Sumario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Lead)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Lead)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Cuerpo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Cuerpo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Categoria)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Categoria)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.FechaPublicacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.FechaPublicacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.FechaRedaccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.FechaRedaccion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Estado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Estado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Autor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Autor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.AutorContacto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.AutorContacto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Foto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Foto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.FotoPie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.FotoPie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Video)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Video)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.Localidad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.Localidad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.CantidadVisitas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.CantidadVisitas)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Noticia.CantidadLikes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Noticia.CantidadLikes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Noticia?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

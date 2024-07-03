@@ -1,0 +1,109 @@
+﻿@page
+@model AlMomento.Pages.Noticias.Gestionar.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Noticia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Noticia.Titulo" class="control-label"></label>
+                <input asp-for="Noticia.Titulo" class="form-control" />
+                <span asp-validation-for="Noticia.Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Sumario" class="control-label"></label>
+                <input asp-for="Noticia.Sumario" class="form-control" />
+                <span asp-validation-for="Noticia.Sumario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Lead" class="control-label"></label>
+                <input asp-for="Noticia.Lead" class="form-control" />
+                <span asp-validation-for="Noticia.Lead" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Cuerpo" class="control-label"></label>
+                <input asp-for="Noticia.Cuerpo" class="form-control" />
+                <span asp-validation-for="Noticia.Cuerpo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Categoria" class="control-label"></label>
+                <input asp-for="Noticia.Categoria" class="form-control" />
+                <span asp-validation-for="Noticia.Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.FechaPublicacion" class="control-label"></label>
+                <input asp-for="Noticia.FechaPublicacion" class="form-control" />
+                <span asp-validation-for="Noticia.FechaPublicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.FechaRedaccion" class="control-label"></label>
+                <input asp-for="Noticia.FechaRedaccion" class="form-control" />
+                <span asp-validation-for="Noticia.FechaRedaccion" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Noticia.Estado" /> @Html.DisplayNameFor(model => model.Noticia.Estado)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Autor" class="control-label"></label>
+                <input asp-for="Noticia.Autor" class="form-control" />
+                <span asp-validation-for="Noticia.Autor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.AutorContacto" class="control-label"></label>
+                <input asp-for="Noticia.AutorContacto" class="form-control" />
+                <span asp-validation-for="Noticia.AutorContacto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Foto" class="control-label"></label>
+                <input asp-for="Noticia.Foto" class="form-control" />
+                <span asp-validation-for="Noticia.Foto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.FotoPie" class="control-label"></label>
+                <input asp-for="Noticia.FotoPie" class="form-control" />
+                <span asp-validation-for="Noticia.FotoPie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Video" class="control-label"></label>
+                <input asp-for="Noticia.Video" class="form-control" />
+                <span asp-validation-for="Noticia.Video" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.Localidad" class="control-label"></label>
+                <input asp-for="Noticia.Localidad" class="form-control" />
+                <span asp-validation-for="Noticia.Localidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.CantidadVisitas" class="control-label"></label>
+                <input asp-for="Noticia.CantidadVisitas" class="form-control" />
+                <span asp-validation-for="Noticia.CantidadVisitas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noticia.CantidadLikes" class="control-label"></label>
+                <input asp-for="Noticia.CantidadLikes" class="form-control" />
+                <span asp-validation-for="Noticia.CantidadLikes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

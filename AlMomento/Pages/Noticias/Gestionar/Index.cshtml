@@ -1,0 +1,126 @@
+﻿@page
+@model AlMomento.Pages.Noticias.Gestionar.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Sumario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Lead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Cuerpo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].FechaPublicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].FechaRedaccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].AutorContacto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].FotoPie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Video)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].Localidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].CantidadVisitas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia[0].CantidadLikes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Noticia) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sumario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lead)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cuerpo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPublicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRedaccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutorContacto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FotoPie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Video)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Localidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadVisitas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadLikes)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
