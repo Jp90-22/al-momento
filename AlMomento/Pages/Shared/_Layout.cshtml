@@ -3,31 +3,66 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AlMomento</title>
+    <title>@ViewData["Title"] | Al Momento</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AlMomento.styles.css" asp-append-version="true" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favicon-16x16.png">
+    <link rel="manifest" href="~/site.webmanifest">
+    <link rel="mask-icon" href="~/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#75E6E6">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">AlMomento</a>
+        <div class="container-fluid header-weather d-flex px-4 align-content-center justify-content-between">
+            <p class="header-weather-content my-3">
+               <strong>Santo Domingo </strong>
+                <span>23°C / 26°C </span>
+                <i class="bi bi-cloud-sun-fill"></i>
+           </p>
+
+            <a class="my-3 text-dark" asp-page="/Noticias/Gestionar/Index">
+                <i class="bi bi-gear-fill"></i>
+           </a>
+        </div>
+        <nav class="navbar navbar-expand-sm flex-column navbar-toggleable-sm navbar-light bg-white p-0 mb-3">
+            <div class="container-fluid header-brand d-flex align-content-center justify-content-md-center justify-content-sm-between py-1">
+                <a class="navbar-brand m-0" asp-area="" asp-page="/Index">
+                    <img src="~/res/Banner - Al Momento.png" width="189.7" height="75" alt="Al Momento" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                
+            </div>
+            <div class="container">
+                <div class="navbar-collapse flex-row collapse d-sm-inline-flex justify-content-center align-content-center">
+                    <ul class="navbar-nav flex-grow-1 flex-row flex-wrap justify-content-center align-content-center">
+                        <li class="nav-item mx-md-0 mx-2">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Nacionales</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        <li class="nav-item mx-md-0 mx-2">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Sociales</a>
+                        </li>
+                        <li class="nav-item mx-md-0 mx-2">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Economía</a>
+                        </li>
+                        <li class="nav-item mx-md-0 mx-2">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Deportes</a>
+                        </li>
+                        <li class="nav-item mx-md-0 mx-2">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Entretenimiento</a>
+                        </li>
+                        <li class="nav-item mx-md-0 mx-2">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Turismo</a>
                         </li>
                     </ul>
-                </div>
+                 </div>
             </div>
         </nav>
     </header>
@@ -37,9 +72,9 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - AlMomento - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="border-top footer text-muted bg-dark bg-gradient">
+        <div class="container text-white">
+            &copy; 2024 - Al Momento
         </div>
     </footer>
 

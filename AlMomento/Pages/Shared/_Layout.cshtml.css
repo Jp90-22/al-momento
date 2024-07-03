@@ -46,3 +46,15 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.header-weather {
+    border-bottom: 2px dotted #a2a2a2;
+}
+
+.header-weather-content {
+    font-size: 0.8rem;
+}
+
+.header-brand {
+    background-color: #75E6E6;
+}
