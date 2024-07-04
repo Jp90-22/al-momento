@@ -1,14 +1,15 @@
 ﻿@page
-@model AlMomento.Pages.Noticias.Gestionar.DetailsModel
+@model AlMomento.Pages.Noticias.Gestionar.EliminarModel
 
 @{
-    ViewData["Title"] = "Detalles de una noticia publicada";
+    ViewData["Title"] = "Eliminar una noticia publicada";
 }
 
-<h1>Detalles de la noticia</h1>
+<h1>Eliminar la noticia</h1>
 
+<h3>¿Estás seguro de que quieres eliminar esta noticia?</h3>
 <div>
-    <h4 class="text-muted">
+    <h4 class="text-muted mt-3">
         <small>Noticia</small>
     </h4>
 
@@ -111,8 +112,10 @@
             @Html.DisplayFor(model => model.Noticia.CantidadLikes)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Noticia?.ID">Editar esta noticia</a> |
-    <a asp-page="./Index">Volver al listado de noticias</a>
+
+    <form method="post" class="my-4">
+        <input type="hidden" asp-for="Noticia.ID" />
+        <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" /> |
+        <a asp-page="./Index">Volver al listado de noticias</a>
+    </form>
 </div>

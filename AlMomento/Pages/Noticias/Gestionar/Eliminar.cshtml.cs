@@ -10,11 +10,11 @@ using AlMomento.Models;
 
 namespace AlMomento.Pages.Noticias.Gestionar
 {
-    public class DeleteModel : PageModel
+    public class EliminarModel : PageModel
     {
         private readonly AlMomento.Data.AlMomentoContext _context;
 
-        public DeleteModel(AlMomento.Data.AlMomentoContext context)
+        public EliminarModel(AlMomento.Data.AlMomentoContext context)
         {
             _context = context;
         }

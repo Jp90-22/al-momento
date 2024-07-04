@@ -11,11 +11,11 @@ using AlMomento.Models;
 
 namespace AlMomento.Pages.Noticias.Gestionar
 {
-    public class EditModel : PageModel
+    public class EditarModel : PageModel
     {
         private readonly AlMomento.Data.AlMomentoContext _context;
 
-        public EditModel(AlMomento.Data.AlMomentoContext context)
+        public EditarModel(AlMomento.Data.AlMomentoContext context)
         {
             _context = context;
         }

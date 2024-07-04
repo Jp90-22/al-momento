@@ -10,11 +10,11 @@ using AlMomento.Models;
 
 namespace AlMomento.Pages.Noticias.Gestionar
 {
-    public class DetailsModel : PageModel
+    public class DetallesModel : PageModel
     {
         private readonly AlMomento.Data.AlMomentoContext _context;
 
-        public DetailsModel(AlMomento.Data.AlMomentoContext context)
+        public DetallesModel(AlMomento.Data.AlMomentoContext context)
         {
             _context = context;
         }
