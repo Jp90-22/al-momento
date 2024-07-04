@@ -4,6 +4,7 @@ using AlMomento.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AlMomento.Migrations
 {
     [DbContext(typeof(AlMomentoContext))]
-    partial class AlMomentoContextModelSnapshot : ModelSnapshot
+    [Migration("20240704030836_VideoAttrNullable")]
+    partial class VideoAttrNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
