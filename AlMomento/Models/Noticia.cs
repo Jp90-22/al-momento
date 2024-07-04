@@ -19,7 +19,7 @@ namespace AlMomento.Models
         public string Sumario { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido.")]
-        [StringLength(400, ErrorMessage = "La longitud máxima del lead es de 400 caracteres.")]
+        [StringLength(900, ErrorMessage = "La longitud máxima del lead es de 900 caracteres.")]
         [Display(Name = "Lead")]
         public string Lead { get; set; }
 
