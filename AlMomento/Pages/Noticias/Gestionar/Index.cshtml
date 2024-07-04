@@ -2,125 +2,60 @@
 @model AlMomento.Pages.Noticias.Gestionar.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Gestionar las noticias del sitio";
 }
 
-<h1>Index</h1>
+<h1>Gestionar las noticias</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Publicar una noticia</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Titulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Sumario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Lead)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Cuerpo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Categoria)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].FechaPublicacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].FechaRedaccion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Autor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].AutorContacto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Foto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].FotoPie)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Video)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].Localidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].CantidadVisitas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noticia[0].CantidadLikes)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Noticia) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sumario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lead)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cuerpo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaPublicacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaRedaccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Autor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AutorContacto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Foto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoPie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Video)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Localidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CantidadVisitas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CantidadLikes)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<hr />
+
+<h3 class="mt-4 mb-2">
+    Noticias publicadas:
+</h3>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    @foreach (var noticia in Model.Noticia)
+    {
+        <div class="col">
+            <div class="card @(noticia.Estado? "border-info" : "border-secondary") shadow">
+                <img src="@noticia.Foto" class="card-img-top" alt="@noticia.FotoPie">
+                <div class="card-body">
+                    <h5 class="card-title">@noticia.Titulo</h5>
+                    <h6 class="card-subtitle mt-1 mb-2 text-muted">
+                        <small>
+                            @noticia.Categoria
+                        </small>
+                    </h6>
+                    <p class="card-text">
+                        @if(noticia.Sumario.Length > 250)
+                        {
+                            @(noticia.Sumario.Substring(0, 250) + "...")
+                        }
+                        else
+                        {
+                            @noticia.Sumario
+                        }
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="btn-group">
+                            <a class="btn btn-sm btn-outline-primary" role="button" title="Editar noticia" asp-page="./Edit" asp-route-id="@noticia.ID">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-info" role="button" title="Detalles de la noticia" asp-page="./Details" asp-route-id="@noticia.ID">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-danger" role="button" title="Eliminar noticia" asp-page="./Delete" asp-route-id="@noticia.ID">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </div>
+                        <small class="text-body-secondary">@noticia.Autor</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
