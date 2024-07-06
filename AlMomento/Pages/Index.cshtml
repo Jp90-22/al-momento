@@ -22,3 +22,89 @@
         </div>
     </div>
 </div>
+
+<div class="mb-4">
+    <h2 class="my-4">Noticias destacadas</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        @foreach (var noticia in Model.NoticiasDestacadas)
+        {
+            <div class="col">
+                <a class="text-dark text-decoration-none" asp-page="/Noticias/Ver" asp-route-id="@noticia.ID">
+                    <div class="card border-info shadow h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-8 d-flex flex-column justify-content-between">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">@noticia.Titulo</h5>
+                                    <h6 class="card-subtitle text-muted">
+                                        <small>
+                                            @noticia.Categoria
+                                        </small>
+                                    </h6>
+                                </div>
+                                <div class="card-footer text-body-secondary">
+                                    <div class="d-flex justify-content-start align-content-center">
+                                        <small title="Cantidad de visitas">
+                                            <i class="bi bi-eye-fill"></i>
+                                            <span class="fw-semibold">@noticia.CantidadVisitas</span>
+                                        </small>
+                                        <small class="ms-3" title="Cantidad de me gusta">
+                                            <i class="bi bi-heart-fill"></i>
+                                            <span class="fw-semibold">@noticia.CantidadLikes</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="@noticia.Foto" class="img-fluid rounded-end h-100" alt="@noticia.FotoPie">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<br />
+
+<div class="my-4">
+    <h2 class="my-4">Ultimas noticias agregadas</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        @foreach (var noticia in Model.NoticiasRecientes)
+        {
+            <div class="col">
+                <a class="text-dark text-decoration-none" asp-page="/Noticias/Ver" asp-route-id="@noticia.ID">
+                    <div class="card border-info shadow h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-8 d-flex flex-column justify-content-between">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">@noticia.Titulo</h5>
+                                    <h6 class="card-subtitle text-muted">
+                                        <small>
+                                            @noticia.Categoria
+                                        </small>
+                                    </h6>
+                                </div>
+                                <div class="card-footer text-body-secondary">
+                                    <div class="d-flex justify-content-start align-content-center">
+                                        <small title="Cantidad de visitas">
+                                            <i class="bi bi-eye-fill"></i>
+                                            <span class="fw-semibold">@noticia.CantidadVisitas</span>
+                                        </small>
+                                        <small class="ms-3" title="Cantidad de me gusta">
+                                            <i class="bi bi-heart-fill"></i>
+                                            <span class="fw-semibold">@noticia.CantidadLikes</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="@noticia.Foto" class="img-fluid rounded-end h-100" alt="@noticia.FotoPie">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

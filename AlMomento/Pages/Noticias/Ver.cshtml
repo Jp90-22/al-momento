@@ -22,10 +22,14 @@
     </div>
 
     <div class="d-flex justify-content-center align-content-center">
-        <figure class="figure">
-            <img src="@Model.Noticia.Foto" class="figure-img img-fluid rounded" alt="@Model.Noticia.FotoPie">
-            <figcaption class="figure-caption">@Model.Noticia.FotoPie</figcaption>
-        </figure>
+        <div class="w-75">
+            <figure class="figure d-flex flex-column justify-content-center">
+                <img src="@Model.Noticia.Foto" class="figure-img img-fluid rounded" alt="@Model.Noticia.FotoPie">
+                <figcaption class="figure-caption">
+                    @Model.Noticia.FotoPie
+                </figcaption>
+            </figure>
+        </div>
     </div>
 
     <div class="d-flex justify-content-start align-items-center align-content-center">
