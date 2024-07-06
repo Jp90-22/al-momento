@@ -8,7 +8,7 @@
 <h1>Gestionar las noticias</h1>
 
 <p>
-    <a asp-page="Create">Publicar una noticia</a>
+    <a asp-page="Crear">Publicar una noticia</a>
 </p>
 
 <hr />
@@ -41,18 +41,21 @@
                         }
                     </p>
                     <div class="d-flex justify-content-between align-items-center flex-wrap">
-                        <div class="btn-group">
-                            <a class="btn btn-sm btn-outline-primary" role="button" title="Editar noticia" asp-page="./Editar" asp-route-id="@noticia.ID">
+                        <div class="d-flex justify-content-start align-content-center align-items-center">
+                            <a class="btn btn-sm btn-outline-primary" role="button" title="Ver noticia" target="_blank" asp-page="../Ver" asp-route-id="@noticia.ID">
+                                <i class="bi bi-eye-fill"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-warning mx-2" role="button" title="Editar noticia" asp-page="./Editar" asp-route-id="@noticia.ID">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                             <a class="btn btn-sm btn-outline-info" role="button" title="Detalles de la noticia" asp-page="./Detalles" asp-route-id="@noticia.ID">
                                 <i class="bi bi-info-circle-fill"></i>
                             </a>
-                            <a class="btn btn-sm btn-outline-danger" role="button" title="Eliminar noticia" asp-page="./Eliminar" asp-route-id="@noticia.ID">
+                            <a class="btn btn-sm btn-outline-danger mx-2" role="button" title="Eliminar noticia" asp-page="./Eliminar" asp-route-id="@noticia.ID">
                                 <i class="bi bi-trash-fill"></i>
                             </a>
                         </div>
-                        <small class="text-body-secondary">@noticia.Autor</small>
+                        <small class="text-body-secondary mt-sm-0 mt-md-2 mt-lg-0">@noticia.Autor</small>
                     </div>
                 </div>
             </div>

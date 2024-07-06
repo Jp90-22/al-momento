@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using AlMomento.Data;
 using AlMomento.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace AlMomento.Pages.Noticias.Gestionar
+namespace AlMomento.Pages.Noticias
 {
-    public class DetallesModel : PageModel
+    public class VerModel : PageModel
     {
-        private readonly AlMomento.Data.AlMomentoContext _context;
+        private readonly AlMomentoContext _context;
 
-        public DetallesModel(AlMomento.Data.AlMomentoContext context)
+        public VerModel(AlMomentoContext context)
         {
             _context = context;
         }
@@ -29,6 +25,7 @@ namespace AlMomento.Pages.Noticias.Gestionar
             }
 
             var noticia = await _context.Noticia.FirstOrDefaultAsync(m => m.ID == id);
+            
             if (noticia == null)
             {
                 return NotFound();
@@ -37,6 +34,7 @@ namespace AlMomento.Pages.Noticias.Gestionar
             {
                 Noticia = noticia;
             }
+
             return Page();
         }
     }
